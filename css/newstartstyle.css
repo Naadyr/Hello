@@ -1,0 +1,185 @@
+/*для всьогго документа ставим нолячі відступи, смисл тіпа reset css, я так роблю бо normalize css ше не понімаю*/
+*{
+	margin: 0;
+	padding: 0;
+}
+/*ширина для всього тіла короч і вирівнювання по центру*/
+body{
+	font: 100%/1.5em Arial,Helvetica,sans-serif;
+	width: 70%;
+	margin: 0 auto;
+}
+a{
+	list-style: none;
+	font-family: 'Droid Serif', serif;
+}
+/*погналі логотип пиздячить бллджад о курва він буде на флекс-боксі*/
+
+.headcontainer{
+	width: 100%;
+	display: flex;
+	flex-direction:row;
+	justify-content:space-around;
+	height: 200px;
+	box-sizing:border-box;
+
+}
+.logotype{
+	width:60%;
+	font-size:3vw;
+	margin-left: 3%;
+	margin:auto;
+	font-family: 'Lobster', cursive;
+	color:tomato;
+	text-shadow:5px 3px black;
+}
+/*іконки з бомжами, резиновий контейнер і вирівнювання з допомогою того ж самого флекс-бокса, тєма походу цей флекс-бокс, нє?*/
+.icons{
+	width:30%;
+	display: flex;
+	flex-direction:row;
+	margin: auto;
+	overflow: hidden;
+
+}
+.flexicon{
+	width: 94%;
+	max-width: 94%;
+	height: auto;
+	margin-right: 2%;
+}
+.flexicon img{
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+	border:1px solid tomato;
+}
+
+/*кінець блока зі сраними іконками*/
+/*а тепер погналі робить панель навігації, список, інлайн-блок, все як положено, як в школі учили, а шоб ссилки зменшувались разом з
+розрішенням фонт сайз в значенні ваєв від ширини*/
+.linkbar{
+	display: inline-block;
+	width: 100%;
+	height: 60px;
+}
+.linkbar ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.linkbar li{
+	display: inline-block;
+	font-size: 1.5vw;
+	margin: 1.2% 2% 1.2% 2%;
+	border-right: 3px solid black;
+	padding-right: 40px;
+}
+/*така тєма є, флекс бокс запиздячить на основний контент з алкашами, а справа з текстом, для цього короч головний флекс контейнер з напрямком 
+строка, а його елементи будуть розташовані свойством order */
+.flexmain{
+	display: flex;
+	flex-diraction:row;
+}
+.flexcontent{
+	width: 80%;
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+/*отут дочірні контейнеру елементи*/
+.flex-item{
+	width: 48%;
+	margin-top: 15px;
+}
+/*а отут шоб самі зображення були резинові, приймають 100% ширини свого контейнера, в хетемеле вони захоронені в діви, бо як без них то будуть 
+приймать 100% флекс-контейнера і тєми не буде, або ж будуть фіксами*/
+.flex-item img{
+	width: 100%;
+	height:auto;
+	border-radius: 10px;
+	border: 2px solid tomato;
+}
+a{
+	text-decoration: none;
+	color:tomato;
+	text-shadow:3px 1px black;
+}
+.sidebar{
+	width: 20%;
+	display: flex;
+	order:2;
+	font-size: 1vw;
+	margin-top: 25px;
+	flex-direction:column;
+	overflow: auto;
+	line-height: 1.5;
+}
+p{
+	text-indent: 10px;
+	margin: 1% 3% 0 3%;
+}
+.footer{
+	display: flex;
+	width: 99%;
+	font-size: 1vw;
+	border-radius: 10px;
+	margin: auto;
+	overflow: hidden;
+	line-height: 1.5;
+}
+
+/*отук пиздячу під ширину 1280 px шоб могло тіпа під менші цемого норм показувать браузер міг короч блядь і так понятно шо тоє те, 
+медіа запроси блядь, і смисл такий шо буде змінюватись ширина і разом з нею буде мінятись лейаут*/
+@media(max-width: 800px){
+	.linkbar li{
+		padding-right: 20px;
+	}
+}
+@media(max-width: 360px){
+	.headcontainer{
+		width: 100%;
+		flex-direction:column;
+		align-items:center;
+	}
+	.logotype{
+		font-size: 13px;
+	}
+	.icons{
+		width: 100%;
+	}
+	.linkbar li{
+		font-size: 5vw;
+		padding-right: 20px;
+
+	}
+	.flexmain{
+		margin-top: 30px;
+		width: 100%;
+		flex-direction:column;
+		align-items:center;
+	}
+	.flexcontent{
+		flex-direction:column;
+	}
+	.sidebar{
+		width: 100%;
+		font-size: 10px;
+	}
+	.flex-item{
+		width: 100%;
+		
+	}
+	.footer{
+		font-size: 10px;
+		margin-bottom: 10px;
+	}
+
+}
+@media(max-width: 320px){
+	.logotype{
+		font-size: 10px;d
+	}
+}
